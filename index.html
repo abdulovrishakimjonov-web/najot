@@ -9,12 +9,60 @@
 </head>
 <body>
     <section>
-        <div>
-            <div class="w-[50%] h-[900px] bg-orange-50">
-                <img class="h-" src="./img/Screenshot 2025-09-29 192617.png" alt="">
+        <div class="flex items-center gap-49">
+            <div class="w-[50%] h-[770px] bg-[#f7f6ed]">
+                <img class="p-15 " src="./img/Screenshot 2025-09-29 192617.png" alt="">
             </div>
+            <div>
+             <div>
+                <h2 class="text-[35px] font-semibold text-neutral-800 mb-12">Kirish</h2>
+            </div>
+               <div class="relative w-64 mb-8">
+                <input id="username" type="text" placeholder=" " class="peer w-[400px] cursor-pointer border-1 border-gray-300 bg-transparent px-3 pt-4 pb-2 focus:outline-none rounded-md focus:border-yellow-600 peer border  focus:ring-0.5  "/>
+                <label for="username" class="absolute left-2 top-1 text-gray-500 transition-all peer-placeholder-shown:top-4  peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-1 hover:text-[10px] peer-focus:text-sm peer-focus:text-yellow-800 ">
+                 <p class="text-[14px]">Kirish</p>
+              </label>
+           </div>
+           <!--  -->
+           <div class="flex justify-center items-center bg-gray-50">
+  <div class="relative w-[400px]">
+    <div class="flex flex-col gap-8">
+    <input id="password" type="password" placeholder=" " 
+      class="peer w-full rounded-md border cursor-pointer border-gray-300 bg-transparent px-3 pt-5 pb-2 text-base focus:border-yellow-600 focus:outline-none" />
+    <label for="password"
+      class="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-4  peer-placeholder-shown:text-base  peer-focus:top-2  peer-focus:text-sm peer-focus:text-yellow-800 ">
+      Parol
+    </label>
+    <div>
+    <button type="button" onclick="togglePassword()" 
+      class="absolute right-3 top-3 text-gray-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+           viewBox="0 0 24 24" stroke-width="1.5" 
+           stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+          d="M2.036 12.322a1.012 1.012 0 0 1 0-.639
+             C3.423 7.51 7.36 4.5 12 4.5c4.638 0 
+             8.573 3.007 9.963 7.178.07.207.07.431 
+             0 .639C20.577 16.49 16.64 19.5 
+             12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+        <path stroke-linecap="round" stroke-linejoin="round" 
+          d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+      </svg>
+    </button>
+    <a href=""><button class="w-full rounded-md bg-yellow-700 cursor-pointer  text-white py-3 text-base font-medium hover:bg-yellow-900 transition">Kirish</button></a>
+      </div>
+  </div>
+            </div>
+           </div>
         </div>
     </section>
+<script>
+  function togglePassword() {
+    const pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+  }
+</script>
+
     
 </body>
 </html>

